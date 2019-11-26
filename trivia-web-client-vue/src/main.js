@@ -8,6 +8,7 @@ Vue.use(VueRouter)
 
 import Dashboard from './components/Dashboard.vue';
 import Auth from '@okta/okta-vue';
+import TriviaGame from './components/TriviaGame.vue'
 
 Vue.use(Auth, {
   issuer: 'https://dev-225563.okta.com/oauth2/default',
@@ -18,7 +19,9 @@ Vue.use(Auth, {
 
 const routes = [
   { path: '/implicit/callback', component: Auth.handleCallback() },
+  { path: '/', component: TriviaGame},
   { path: '/', component: Dashboard},
+
 ]
 
 const router = new VueRouter({
